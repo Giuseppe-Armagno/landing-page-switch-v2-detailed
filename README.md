@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
 
-## Project info
+# Urban Sustainable Mobility Wizard
 
-**URL**: https://lovable.dev/projects/3aa066f9-aaba-4b1b-b736-32a4a2fc109a
+A modern, responsive web application for urban mobility planning and analysis. This application provides a step-by-step wizard interface for mobility service providers to analyze and optimize their operations.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- 5-step progressive wizard interface with numbered indicators
+- Modern UI with clean, minimalist design
+- Responsive layout for all device types
+- Form validation and data persistence
+- CSV file upload and analysis
+- Data validation and visualization
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3aa066f9-aaba-4b1b-b736-32a4a2fc109a) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
+- React Router
+- Shadcn UI Components
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/3aa066f9-aaba-4b1b-b736-32a4a2fc109a) and click on Share -> Publish.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. The application will be available at `http://localhost:8080`
 
-## Can I connect a custom domain to my Lovable project?
+## Wizard Steps
 
-Yes, you can!
+1. **Business Context**: Input business model, industry, vehicle type, and operating parameters
+2. **Demand Patterns**: Define demand influencing factors and prediction horizons
+3. **Technical Data**: Upload and configure data sources and parameters 
+4. **Loading Analysis**: Processing and analyzing the provided data
+5. **Data Validation & Start Analysis**: View validation results and initiate the analysis
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## User Interface
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Modern, minimalist design with clean typography
+- Primary color: Bright red/orange (#FA442D)
+- Rounded buttons and clear visual hierarchy
+- Responsive navigation with mobile-friendly menus
+- Visual step indicators with progress tracking
+
+## License
+
+© 2025 Urban Mobility Platform. All rights reserved.

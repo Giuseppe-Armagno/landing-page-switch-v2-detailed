@@ -28,6 +28,14 @@ export default {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
+				mobility: {
+					red: '#FA442D',
+					redHover: '#E03A25',
+					dark: '#333333',
+					light: '#FFFFFF',
+					gray: '#F5F5F5',
+					border: '#E0E0E0',
+				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
