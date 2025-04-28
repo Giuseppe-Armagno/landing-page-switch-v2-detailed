@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { LogIn } from "lucide-react";
+import { Google } from "lucide-react";
 
 interface LoginStepProps {
   onNext: () => void;
@@ -23,7 +23,7 @@ const LoginStep: React.FC<LoginStepProps> = ({ onNext, onBack }) => {
           onClick={onNext}
           className="w-full flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-800 border border-gray-300"
         >
-          <LogIn className="h-5 w-5" />
+          <Google className="h-5 w-5" />
           Continue with Google
         </Button>
       </div>
