@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import StepIndicator from "./StepIndicator";
 import BusinessContextForm, { BusinessContextData } from "./BusinessContextForm";
@@ -6,12 +5,12 @@ import DemandPatternsForm, { DemandPatternsData } from "./DemandPatternsForm";
 import TechnicalDataForm, { TechnicalDataFormData } from "./TechnicalDataForm";
 import LoadingStep from "./LoadingStep";
 import ValidationStep from "./ValidationStep";
+import LoginStep from "./LoginStep";
 
 const Wizard = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
-  const totalSteps = 5;
+  const totalSteps = 6;
 
-  // Form data state for each step
   const [businessContextData, setBusinessContextData] = useState<BusinessContextData>({
     industry: "",
     vehicleType: "",
@@ -51,21 +50,17 @@ const Wizard = () => {
   };
 
   const handleComplete = () => {
-    // In a real app, this would submit the data to the backend
     console.log("Wizard completed with data:", {
       businessContext: businessContextData,
       demandPatterns: demandPatternsData,
       technicalData: technicalData,
     });
     
-    // You could redirect to a success page or show a success message
     alert("Analysis started successfully!");
   };
 
-  // Save data to local storage whenever it changes
   React.useEffect(() => {
     try {
-      // Save data to localStorage, excluding the file which can't be serialized
       const { csvFile, ...technicalDataWithoutFile } = technicalData;
       
       localStorage.setItem("mobility-wizard-data", JSON.stringify({
@@ -79,7 +74,6 @@ const Wizard = () => {
     }
   }, [businessContextData, demandPatternsData, technicalData, currentStep]);
 
-  // Load data from local storage on initial render
   React.useEffect(() => {
     try {
       const savedData = localStorage.getItem("mobility-wizard-data");
@@ -89,7 +83,7 @@ const Wizard = () => {
         setDemandPatternsData(parsedData.demandPatternsData);
         setTechnicalData({
           ...parsedData.technicalData,
-          csvFile: null, // File can't be stored in localStorage
+          csvFile: null,
         });
         setCurrentStep(parsedData.currentStep);
       }
@@ -130,10 +124,17 @@ const Wizard = () => {
         )}
         
         {currentStep === 4 && (
-          <LoadingStep onComplete={handleNext} />
+          <LoginStep
+            onNext={handleNext}
+            onBack={handleBack}
+          />
         )}
         
         {currentStep === 5 && (
+          <LoadingStep onComplete={handleNext} />
+        )}
+        
+        {currentStep === 6 && (
           <ValidationStep
             onComplete={handleComplete}
             onBack={handleBack}
